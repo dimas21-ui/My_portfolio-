@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #07b9f5, #ccf5ff);
+            color: #333;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff9a9e;
+        }
+        .container {
+            padding: 50px 20px;
+        }
+        .section {
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .projects {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .project {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #myPortfolio {
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 10px;
+            z-index: 1001;
+            text-align: center;
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .typing-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .typing {
+            font-size: 1.5em;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid;
+            width: 100%;
+            animation: blink 0.5s step-end infinite;
+        }
+        .about-img {
+            max-width: 200px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-links a {
+            text-decoration: none;
+            font-size: 2em;
+            transition: transform 0.3s ease;
+        }
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+        .contact-description {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .social-links a img {
+            width: 40px;
+            height: 40px;
+        }
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+            .project {
+                width: 90%;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.2em;
+            }
+            .typing {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="myPortfolio">
+        <h1>My Portfolio</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img src="WhatsApp Image 2025-01-03 at 23.50.42_0b2137bb.jpg" alt="About Me" class="about-img">
+                <div>
+                    <div class="typing-container">
+                        <div id="typing" class="typing"></div>
+                    </div>
+                    <p>Halo! Saya adalah seorang pengembang pemula dengan pengalaman dalam menciptakan situs web yang dinamis dan ramah pengguna. Saya memiliki keahlian di pengembangan front-end dengan fondasi yang kuat dalam HTML, CSS, dan JavaScript.</p>
+                    <p>Selain coding, saya memiliki minat besar dalam desain UI/UX dan berusaha menciptakan pengalaman pengguna yang intuitif dan estetis. Saya senang memecahkan masalah kompleks, mempelajari teknologi baru, dan berkolaborasi dengan orang lain untuk membangun proyek yang berdampak.</p>
+                    <p>Di waktu luang, saya suka bermain game, membaca tentang perkembangan teknologi terbaru, dan mengerjakan proyek pribadi untuk meningkatkan keterampilan saya. Saya percaya pada pembelajaran sepanjang ini dan selalu mencari peluang untuk tumbuh secara pribadi dan profesional.</p>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="https://via.placeholder.com/150" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/150" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/150" alt="Project 3">
+                    <h3>Project 3</h3>
+                    <p>Description of Project 3.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p class="contact-description">jika ada keperluan Jangan ragu untuk menghubungi saya melalui platfrom media sosial di bawah ini:</p>
+            <div class="social-links">
+                <a href="https://twitter.com/yourusername" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/yourusername" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/dmsdxy/profilecard/?igsh=M3cxdHp2aDhhOGg2" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+                </a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Dimas. All rights reserved.</p>
+    </footer>
+    <script>
+        const texts = ["Halo, I am Dimas saputra", "a novice developer", "Welcome to My portfolio"];
+        let index = 0;
+        let charIndex = 0;
+        const typingElement = document.getElementById("typing");
+
+        function type() {
+            if (charIndex < texts[index].length) {
+                typingElement.textContent += texts[index].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typingElement.textContent = texts[index].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 100);
+            } else {
+                index = (index + 1) % texts.length;
+                setTimeout(type, 100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            type();
+
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
